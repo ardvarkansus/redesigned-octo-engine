@@ -438,13 +438,13 @@
     },
     {
       "id": "baron_17j_swiss_1949",
-      "name": "baron 17j",
-      "brand": "swiss",
+      "name": "Baron 17J Swiss 1949",
+      "brand": "Baron",
       "type": "Swiss Wrist Watch",
       "folder": "swiss-wrist-watches",
       "image": "images/swiss-wrist-watches/Baron_17j_swiss_1949.jpg",
       "img": "images/swiss-wrist-watches/Baron_17j_swiss_1949.jpg",
-      "description": "Baron swiss 1949 17j vintage watch.",
+      "description": "Baron 17J Swiss vintage wrist watch from 1949.",
       "case_image": "images/swiss-watch-cases/Baron_17j_swiss_case.jpg",
       "movement_img": "images/swiss-movements-watches/Baron_17j_swiss_movement_1949.jpg"
     },
