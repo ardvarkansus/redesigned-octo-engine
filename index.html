@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  images/<favicon.ico>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VintageWatchSite - Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .home-intro {
+      max-width: 760px;
+      margin: 0 auto 24px;
+      text-align: center;
+    }
+
+    .watch-card {
+      width: 250px;
+    }
+
+    .watch-img,
+    .image-error {
+      display: block;
+      width: 100%;
+      height: 250px;
+      box-sizing: border-box;
+    }
+
+    .watch-img {
+      object-fit: contain;
+      background: #f5ead0;
+    }
+
+    .image-error {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      color: #6b2d2d;
+      background: #f5ead0;
+      overflow-wrap: anywhere;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .movement-preview {
+      margin-top: 10px;
+    }
+
+    .movement-preview summary {
+      color: #6f451f;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .movement-img {
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+      background: #f5ead0;
+    }
+
+    .about-link-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+
+    .about-history-message {
+      color: #fff8e1;
+      font-size: 0.85rem;
+      font-weight: normal;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body class="parchment">
+  <nav class="navbar" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="american-pocket.html">American Pocket Watches</a>
+    <a href="american-wrist.html">American Wrist Watches</a>
+    <a href="swiss-wrist.html">Swiss Wrist Watches</a>
+    <a href="swiss-pocket.html">Swiss Pocket Watches</a>
+    <a href="american-homemade-clocks.html">American Homemade Clocks</a>
+    <a href="brands.html">Brands</a>
+    <a href="collections.html">Collections</a>
+    <a href="search.html">Search</a>
+    <a href="list-your-watch.html">List Your Watch</a>
+    <a href="movement-upload.html">Movement Upload</a>
+    <a href="movement-viewer.html">Movement Viewer</a>
+    <a href="contact.html">Contact</a>
+    <span class="about-link-group">
+      <a href="about.html">About</a>
+      <span class="about-history-message">
+        Click "About" button to read about the importance of pocket watch history
+      </span>
+    </span>
+    <span id="navbar-time" class="navbar-time"></span>
+  </nav>
+
+  <main class="content">
+    <h1>Welcome to VintageWatchSite</h1>
+    <h2>Your home for American and Swiss vintage watches</h2>
+
+    <p class="home-intro">
+      Explore five featured watches from the American and Swiss collections.
+      Use Zoom for an individual image or the page magnifier controls for the full page.
+    </p>
+
+    <p id="home-status" class="page-status" role="status">
+      Loading featured watches...
+    </p>
+
+    <section id="watch-grid" class="watch-grid" aria-label="Featured watches"></section>
+
+    <h2>American Homemade Clocks</h2>
+    <p id="clock-status" class="page-status" role="status">
+      Loading homemade clocks...
+    </p>
+    <section id="clock-grid" class="watch-grid" aria-label="American homemade clocks"></section>
+  </main>
+
+  <script src="clock.js"></script>
+  <script src="main.js"></script>
+  <script>
+    const featuredIds = [
+      "hamilton_thor_1960_770_22j",
+      "elgin_father_time_16s_21j_24299142",
+      "elgin_bwr_16s_21j_j376411",
+      "elgin_1960_lord_elgin_760_automatic_30j",
+      "longines_admiral_1973_6651_automatic_daydate_25j",
+      "gruen_semi_thin_758_1928_17j"
+    ];
+
+    const homemadeClockIds = [
+      "walnut_seth_thomas_triple_chime_pendulum_homemade",
+      "white_oak_triple_chime_tambour_homemade",
+      "regula25_cukoo_24_inch_one_day_musical_1940s_clock",
+      "german_late_1800s_7_foot_weight_driven_grandfather_clock.jpg",
+      "victorian_fraganard_1940s_1950s_weight)driven_wall_clock.jpg"
+      
+
+    ];
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function getImagePath(watch) {
+      const image = typeof watch.image === "string" ? watch.image.trim() : "";
+      if (image) return image.replace(/\\/g, "/");
+
+      const folder = typeof watch.folder === "string" ? watch.folder.trim() : "";
+      const img = typeof watch.img === "string" ? watch.img.trim() : "";
+      return folder && img ? `images/${folder}/${img}`.replace(/\\/g, "/") : "";
+    }
+
+    function getMovementPath(watch) {
+      return typeof watch.movement_img === "string"
+        ? watch.movement_img.trim().replace(/\\/g, "/")
+        : "";
+    }
+
+    function showImageError(image, path) {
+      const errorElement = document.createElement("div");
+      errorElement.className = "image-error";
+      errorElement.textContent = path
+        ? `Image not found: ${path}`
+        : "No image path was supplied.";
+      image.replaceWith(errorElement);
+    }
+
+    function createWatchCard(watch) {
+      const card = document.createElement("article");
+      const imagePath = getImagePath(watch);
+      const movementPath = getMovementPath(watch);
+      const name = watch.name || "Unnamed watch";
+      const type = watch.type || "Vintage Watch";
+      const description = watch.description || `${name} vintage watch.`;
+
+      card.className = "watch-card";
+      card.innerHTML = `
+        <img class="watch-img loupe-target" src="${escapeHtml(imagePath)}" alt="${escapeHtml(name)}" loading="eager">
+        <h3>${escapeHtml(name)}</h3>
+        <p>${escapeHtml(type)}</p>
+        <div class="card-buttons">
+          <button type="button" class="details-button">View Details</button>
+          <button type="button" class="zoom-button">Zoom</button>
+          <a href="movement-viewer.html?id=${encodeURIComponent(watch.id || "")}">Movement</a>
+        </div>
+        ${movementPath ? `
+          <details class="movement-preview">
+            <summary>Preview movement</summary>
+            <img class="movement-img loupe-target" src="${escapeHtml(movementPath)}" alt="Movement of ${escapeHtml(name)}" loading="lazy">
+          </details>
+        ` : ""}
+      `;
+
+      const image = card.querySelector(".watch-img");
+      image.addEventListener("error", () => showImageError(image, imagePath), { once: true });
+
+      card.querySelector(".details-button").addEventListener("click", () => {
+        window.location.href = `details.html?watchId=${encodeURIComponent(watch.id || "")}`;
+      });
+
+      card.querySelector(".zoom-button").addEventListener("click", () => {
+        const currentImage = card.querySelector(".watch-img");
+        if (currentImage) currentImage.classList.toggle("zoomed");
+      });
+
+      return card;
+    }
+
+    async function loadFeaturedWatches() {
+      const status = document.getElementById("home-status");
+      const grid = document.getElementById("watch-grid");
+      const clockStatus = document.getElementById("clock-status");
+      const clockGrid = document.getElementById("clock-grid");
+
+      try {
+        const response = await fetch("watches.json", { cache: "no-store" });
+        if (!response.ok) throw new Error(`Unable to load watches.json: ${response.status}`);
+
+        const data = await response.json();
+        if (!data || !Array.isArray(data.watches)) {
+          throw new Error('watches.json must contain a "watches" array.');
+        }
+
+        const watchesById = new Map(data.watches.map((watch) => [watch.id, watch]));
+        const featuredWatches = featuredIds
+          .map((id) => watchesById.get(id))
+          .filter(Boolean);
+
+        if (featuredWatches.length !== featuredIds.length) {
+          console.warn("Some featured watch IDs were not found in watches.json.");
+        }
+
+        grid.replaceChildren(...featuredWatches.map(createWatchCard));
+        status.textContent = `${featuredWatches.length} featured watches loaded.`;
+
+        const homemadeClocks = homemadeClockIds
+          .map((id) => watchesById.get(id))
+          .filter(Boolean);
+        clockGrid.replaceChildren(...homemadeClocks.map(createWatchCard));
+        clockStatus.textContent = `${homemadeClocks.length} homemade clocks loaded.`;
+      } catch (error) {
+        console.error("Failed to load featured watches:", error);
+        status.textContent = "Unable to load watches. Check watches.json and Live Server.";
+        grid.replaceChildren();
+        clockStatus.textContent = "Unable to load homemade clocks.";
+        clockGrid.replaceChildren();
+      }
+    }
+
+    loadFeaturedWatches();
+  </script>
+</body>
+</html>

@@ -1,0 +1,515 @@
+{
+  "watches": [
+    {
+      "id": "elgin_0s_15j_11924721",
+      "name": "Elgin 0s 15J 11924721",
+      "brand": "Elgin",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/elgin_0s_15j_11924721.jpg",
+      "img": "images/american-pocket-watches/elgin_0s_15j_11924721.jpg",
+      "description": "Elgin 1905 0s 15J 11924721 vintage watch.",
+      "movement_img": "images/american-movements-watches/elgin_0s_15j_11924721.jpg"
+    },
+    {
+      "id": "elgin_12s_7j_31150898",
+      "name": "Elgin 12s 7J 31150898",
+      "brand": "Elgin",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/elgin_12s_7j_31150898.jpg",
+      "img": "images/american-pocket-watches/elgin_12s_7j_31150898.jpg",
+      "description": "Elgin 1928 12S 7J 31150898 vintage watch.",
+      "movement_img": "images/american-movements-watches/elgin_12s_7j_31150898.jpg"
+    },
+    {
+      "id": "elgin_16s_11j_4852696",
+      "name": "Elgin 16s 11J 4852696",
+      "brand": "Elgin",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/elgin_16s_11j_4852696.jpg",
+      "img": "images/american-pocket-watches/elgin_16s_11j_4852696.jpg",
+      "description": "Elgin 1893 16S 11J 4852696 vintage watch.",
+      "movement_img": "images/american-movements-watches/elgin_16s_11j_4852696.jpg"
+    },
+    {
+      "id": "elgin_16s_17j_7779032",
+      "name": "Elgin 16s 17J 7779032",
+      "brand": "Elgin",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/elgin_16s_17j_7779032.jpg",
+      "img": "images/american-pocket-watches/elgin_16s_17j_7779032.jpg",
+      "description": "Elgin 1899 16S 17J 7779032 vintage watch.",
+      "movement_img": "images/american-movements-watches/elgin_16s_17j_7779032.jpg"
+    },
+    {
+      "id": "elgin_16s_7j_14262954",
+      "name": "Elgin 16s 7J 14262954",
+      "brand": "Elgin",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/elgin_16s_7j_14262954.jpg",
+      "img": "images/american-pocket-watches/elgin_16s_7j_14262954.jpg",
+      "description": "Elgin 1910 16S 7J 14262954 vintage watch.",
+      "movement_img": "images/american-movements-watches/elgin_16s_7j_14262954.jpg"
+    },
+    {
+      "id": "elgin_16s_7j_15401591",
+      "name": "Elgin 16s 7J 15401591",
+      "brand": "Elgin",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/elgin_16s_7j_15401591.jpg",
+      "img": "images/american-pocket-watches/elgin_16s_7j_15401591.jpg",
+      "description": "Elgin 1911 16S 7J 15401591 vintage watch.",
+      "movement_img": "images/american-movements-watches/elgin_16s_7j_15401591.jpg"
+    },
+    {
+      "id": "elgin_16s_7j_18081199",
+      "name": "Elgin 16s 7J 18081199",
+      "brand": "Elgin",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/elgin_16s_7j_18081199.jpg",
+      "img": "images/american-pocket-watches/elgin_16s_7j_18081199.jpg",
+      "description": "Elgin 1915 16S 7J 18081199 vintage watch.",
+      "movement_img": "images/american-movements-watches/elgin_16s_7j_18081199.jpg"
+    },
+    {
+      "id": "elgin_18s_15j_7859238",
+      "name": "Elgin 18s 15J 7859238",
+      "brand": "Elgin",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/elgin_18s_15j_7859238.jpg",
+      "img": "images/american-pocket-watches/elgin_18s_15j_7859238.jpg",
+      "description": "Elgin 1899 18S 15J 7859238 vintage watch.",
+      "movement_img": "images/american-movements-watches/elgin_18s_15j_7859238.jpg"
+    },
+    {
+      "id": "elgin_18s_7j_9574970",
+      "name": "Elgin 18s 7J 9574970",
+      "brand": "Elgin",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/elgin_18s_7j_9574970.jpg",
+      "img": "images/american-pocket-watches/elgin_18s_7j_9574970.jpg",
+      "description": "Elgin 1902 18S 7J 9574970 vintage watch.",
+      "movement_img": "images/american-movements-watches/elgin_18s_7j_9574970.jpg"
+    },
+    {
+      "id": "elgin_bwr_16s_27203886",
+      "name": "Elgin Bwr 16s 21J 27203886",
+      "brand": "Elgin",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/elgin_bwr_16s_21j_27203886.jpg",
+      "img": "images/american-pocket-watches/elgin_bwr_16s_21j_27203886.jpg",
+      "description": "Elgin 1925 Bwr 16S 21J 27203886 vintage watch.",
+      "movement_img": "images/american-movements-watches/elgin_bwr_16s_21j_27203886.jpg"
+    },
+    {
+      "id": "elgin_bwr_16s_21j_j376411",
+      "name": "Elgin Bwr 16s 21J J376411",
+      "brand": "Elgin",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/elgin_bwr_16s_21j_j376411.jpg",
+      "img": "images/american-pocket-watches/elgin_bwr_16s_21j_j376411.jpg",
+      "description": "Elgin 1948 Bwr 16S 21J J376411 vintage watch.",
+      "movement_img": "images/american-movements-watches/elgin_bwr_16s_21j_j376411.jpg"
+    },
+    {
+      "id": "elgin_bwr_18s_21j_6676296",
+      "name": "Elgin Bwr 18s 17J 6676296",
+      "brand": "Elgin",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/elgin_bwr_18s_17j_6676296.jpg",
+      "img": "images/american-pocket-watches/elgin_bwr_18s_17j_6676296.jpg",
+      "description": "Elgin 1897 Bwr 18S 17J 6676296 vintage watch.",
+      "case_image": "images/american-watch-cases/elgin_bwr_17j_case.jpg",
+      "movement_img": "images/american-movements-watches/elgin_bwr_18s_17j_6676296.jpg"
+    },
+    {
+      "id": "elgin_bwr_18s_17j_6714465",
+      "name": "Elgin Bwr 18s 17J 6714465",
+      "brand": "Elgin",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/elgin_bwr_18s_17j_6714465.jpg",
+      "img": "images/american-pocket-watches/elgin_bwr_18s_17j_6714465.jpg",
+      "description": "Elgin 1897 Bwr 18S 17J 6714465 vintage watch.",
+      "movement_img": "images/american-movements-watches/elgin_bwr_18s_17j_6714465.jpg"
+    },
+    {
+      "id": "elgin_bwr_18s_17j_7299959",
+      "name": "Elgin Bwr 18s 17J 7299959",
+      "brand": "Elgin",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/elgin_bwr_18s_17j_7299959.jpg",
+      "img": "images/american-pocket-watches/elgin_bwr_18s_17j_7299959.jpg",
+      "description": "Elgin 1898 Bwr 18S 17J 7299959 vintage watch.",
+      "movement_img": "images/american-movements-watches/elgin_bwr_18s_17j_7299959.jpg"
+    },
+    {
+      "id": "elgin_father_time_16s_21j_24299142",
+      "name": "Elgin Father Time 16s 21J 24299142",
+      "brand": "Elgin",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/elgin_father_time_16s_21j_24299142.jpg",
+      "img": "images/american-pocket-watches/elgin_father_time_16s_21j_24299142.jpg",
+      "description": "Elgin Father Time 1921 16S 21J 24299142 vintage watch.",
+      "movement_img": "images/american-movements-watches/elgin_father_time_16s_21j_24299142.jpg"
+    },
+    {
+      "id": "elgin_no349_18s_21j_13329028",
+      "name": "Elgin No349 18s 21J 13329028",
+      "brand": "Elgin",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/elgin_no349_18s_21j_13329028.jpg",
+      "img": "images/american-pocket-watches/elgin_no349_18s_21j_13329028.jpg",
+      "description": "Elgin 1908 No349 18S 21J 13329028 vintage watch.",
+      "movement_img": "images/american-movements-watches/elgin_no349_18s_21j_13329028.jpg"
+    },
+    {
+      "id": "elgin_no349_18s_21j_13553395",
+      "name": "Elgin No349 18s 21J 13553395",
+      "brand": "Elgin",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/elgin_no349_18s_21j_13553395.jpg",
+      "img": "images/american-pocket-watches/elgin_no349_18s_21j_13553395.jpg",
+      "description": "Elgin 1909 No349 18S 21J 13553395 vintage watch.",
+      "movement_img": "images/american-movements-watches/elgin_no349_18s_21j_13553395.jpg"
+    },
+    {
+      "id": "elgin_wheeler_18s_17j_11585754",
+      "name": "Elgin Wheeler 18s 17J 11585754",
+      "brand": "Elgin",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/elgin_wheeler_18s_17j_11585754.jpg",
+      "img": "images/american-pocket-watches/elgin_wheeler_18s_17j_11585754.jpg",
+      "description": "Elgin Wheeler 1905 18S 17J 11585754 vintage watch.",
+      "movement_img": "images/american-movements-watches/elgin_wheeler_18s_17j_11585754.jpg"
+    },
+    {
+      "id": "hampden_6s_7j_1688951",
+      "name": "Hampden 6s 7J 1688951",
+      "brand": "Hampden",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/hampden_6s_7j_1688951.jpg",
+      "img": "images/american-pocket-watches/hampden_6s_7j_1688951.jpg",
+      "description": "Hampden 1902 6S 7J 1688951 vintage watch.",
+      "movement_img": "images/american-movements-watches/hampden_6s_7j_1688951.jpg"
+    },
+    {
+      "id": "hampden_no105_16s_21j_3174596",
+      "name": "Hampden No105 16s 21J 3174596",
+      "brand": "Hampden",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/hampden_no105_16s_21j_3174596.jpg",
+      "img": "images/american-pocket-watches/hampden_no105_16s_21j_3174596.jpg",
+      "description": "Hampden 1913 No105 16S 21J 3174596 vintage watch.",
+      "movement_img": "images/american-movements-watches/hampden_no105_16s_21j_3174596.jpg"
+    },
+    {
+      "id": "illinois_18s_15j_1581685",
+      "name": "Illinois 18s 15J 1581685",
+      "brand": "Illinois",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/illinois_18s_15j_1581685.jpg",
+      "img": "images/american-pocket-watches/illinois_18s_15j_1581685.jpg",
+      "description": "Illinois 1901 18S 15J 1581685 vintage watch.",
+      "movement_img": "images/american-movements-watches/illinois_18s_15j_1581685.jpg"
+    },
+    {
+      "id": "ingraham_topflite",
+      "name": "Ingraham Topflite",
+      "brand": "Ingraham",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/ingraham_topflite.jpg",
+      "img": "images/american-pocket-watches/ingraham_topflite.jpg",
+      "description": "Ingraham Topflite vintage watch."
+    },
+    {
+      "id": "waltham_18s_15j_1035784",
+      "name": "Waltham 18s 15J 10351784",
+      "brand": "Waltham",
+      "type": "American Pocket Watch",
+      "folder": "american-pocket-watches",
+      "image": "images/american-pocket-watches/waltham_18s_15j_10351784.jpg",
+      "img": "images/american-pocket-watches/waltham_18s_15j_10351784.jpg",
+      "description": "Waltham 1901 18S 15J 10351784 vintage watch.",
+      "movement_img": "images/american-movements-watches/waltham_18s_15j_10351784.jpg"
+    },
+    {
+      "id": "benrus_1953_BA2_17j",
+      "name": "Benrus 17J",
+      "brand": "Benrus",
+      "type": "American Wrist Watch",
+      "folder": "american-wrist-watches",
+      "image": "images/american-wrist-watches/benrus_1953_BA2_17j.jpg",
+      "img": "images/american-wrist-watches/benrus_1953_BA2_17j.jpg",
+      "description": "Benrus 1953 BA2 17J vintage dress wrist watch.",
+      "case_image": "images/american_wrist_watch_cases/benrus_1953_BA2_17j_case.jpg",
+      "movement_img": "images/american-movements-watches/benrus_1953_BA2_17j.jpg"
+    },
+    
+    {
+      "id": "bulova_accuquartz",
+      "name": "Bulova Accuquartz",
+      "brand": "Bulova",
+      "type": "American Wrist Watch",
+      "folder": "american-wrist-watches",
+      "image": "images/american-wrist-watches/bulova_accuquartz.jpg",
+      "img": "images/american-wrist-watches/bulova_accuquartz.jpg",
+      "description": "Bulova 1969 Accuquartz vintage watch.",
+      "case_image": "images/american_wrist_watch_cases/bulova_accuquartz_case.jpg"
+    },
+    {
+      "id": "bulova_accutron",
+      "name": "Bulova Accutron",
+      "brand": "Bulova",
+      "type": "American Wrist Watch",
+      "folder": "american-wrist-watches",
+      "image": "images/american-wrist-watches/bulova_accutron.jpg",
+      "img": "images/american-wrist-watches/bulova_accutron.jpg",
+      "description": "Bulova 1965 Accutron vintage watch."
+    },
+    {
+      "id": "elgin_1938_17j",
+      "name": "Elgin 1938 17J",
+      "brand": "Elgin",
+      "type": "American Wrist Watch",
+      "folder": "american-wrist-watches",
+      "image": "images/american-wrist-watches/elgin_1938_17j.jpg",
+      "img": "images/american-wrist-watches/elgin_1938_17j.jpg",
+      "description": "Elgin 1938 17J vintage dress watch.",
+      "case_image": "images/american_wrist_watch_cases/elgin_1938_17j_case.jpg",
+      "movement_img": "images/american-movements-watches/elgin_1938_17j.jpg"
+    },
+    {
+      "id": "elgin_1960_lord_elgin_760_automatic_30j",
+      "name": "Elgin Lord Elgin Automatic 30J",
+      "brand": "Elgin",
+      "type": "American Wrist Watch",
+      "folder": "american-wrist-watches",
+      "image": "images/american-wrist-watches/elgin_1960_lord_elgin_760_automatic_30j.jpg",
+      "img": "images/american-wrist-watches/elgin_1960_lord_elgin_760_automatic_30j.jpg",
+      "description": "Elgin 1960 Lord Elgin Automatic 30J 760 vintage watch.",
+      "case_image": "images/american_wrist_watch_cases/elgin_1960_lord_elgin_760_automatic_30j_case.jpg",
+      "movement_img": "images/american-movements-watches/elgin_1960_lord_elgin_760_automatic_30j.jpg"
+    },
+    {
+      "id": "hamilton_thor_1960_770_22j",
+      "name": "Hamilton Thor 1960 770 22J",
+      "brand": "Hamilton",
+      "type": "American Wrist Watch",
+      "folder": "american-wrist-watches",
+      "image": "images/american-wrist-watches/hamilton_thor_1960_770_22j.jpg",
+      "img": "images/american-wrist-watches/hamilton_thor_1960_770_22j.jpg",
+      "description": "Hamilton Thor 1960 770 22J vintage watch.",
+      "case_image": "images/american_wrist_watch_cases/hamilton_thor_1960_770_22j_case.jpg",
+       "movement_img": "images/american-movements-watches/hamilton_thor_1960_770_22j.jpg"
+    },
+
+    {
+      "id": "columbia_1905_680706_7j",
+      "name": "Columbia 680706 7J",
+      "brand": "Columbia",
+      "type": "Swiss Pocket Watch",
+      "folder": "swiss-pocket-watches",
+      "image": "images/swiss-pocket-watches/columbia_1905_680706_7j.jpg",
+      "img": "images/swiss-pocket-watches/columbia_1905_680706_7j.jpg",
+      "description": "Columbia 680706 7J vintage pocket watch.",
+      "movement_img": "images/swiss-movements-watches/columbia_1905_680706_7j.jpg"
+    },
+    {
+      "id": "german_bauwyn_1j",
+      "name": "German Bauwyn 1J",
+      "brand": "Bauwyn",
+      "type": "Swiss Pocket Watch",
+      "folder": "swiss-pocket-watches",
+      "image": "images/swiss-pocket-watches/German)Bauwyn_1j.jpg",
+      "img": "images/swiss-pocket-watches/German)Bauwyn_1j.jpg",
+      "description": "German Bauwyn 1J vintage pocket watch.",
+      "movement_img": "images/swiss-movements-watches/German_Bauwyn_movement.jpg"
+    },
+    {
+      "id": "gruen_semi_thin_758_1928_17j",
+      "name": "Gruen Semi Thin 758 1928 17J",
+      "brand": "Gruen",
+      "type": "Swiss Pocket Watch",
+      "folder": "swiss-pocket-watches",
+      "image": "images/swiss-pocket-watches/gruen_semi_thin_758_1928_17j.jpg",
+      "img": "images/swiss-pocket-watches/gruen_semi_thin_758_1928_17j.jpg",
+      "description": "Gruen Semi Thin 758 1928 17J vintage pocket watch.",
+      "movement_img": "images/swiss-movements-watches/gruen%20semi%20thin_1928%20758_17j.jpg"
+    },
+    {
+      "id": "sears_swiss_1j",
+      "name": "Sears Swiss 1J",
+      "brand": "Sears",
+      "type": "Swiss Pocket Watch",
+      "folder": "swiss-pocket-watches",
+      "image": "images/swiss-pocket-watches/Sears_swiss_1j.jpg",
+      "img": "images/swiss-pocket-watches/Sears_swiss_1j.jpg",
+      "description": "Sears Swiss 1J vintage pocket watch.",
+      "movement_img": "images/swiss-movements-watches/Sears_swiss_movement.jpg"
+    },
+    {
+      "id": "swiss_130955_7j",
+      "name": "Swiss 130955",
+      "brand": "Swiss",
+      "type": "Swiss Pocket Watch",
+      "folder": "swiss-pocket-watches",
+      "image": "images/swiss-pocket-watches/swiss_130955_7j.jpg",
+      "img": "images/swiss-pocket-watches/swiss_130955_7j.jpg",
+      "description": "Swiss 130955 vintage pocket watch.",
+      "movement_img": "images/swiss-movements-watches/swiss_130955_7j.jpg"
+    },
+
+    {
+      "id": "gruen_precision_1951_510_17j",
+      "name": "Gruen Precision 1951 510 17J",
+      "brand": "Gruen",
+      "type": "Swiss Wrist Watch",
+      "folder": "swiss-wrist-watches",
+      "image": "images/swiss-wrist-watches/gruen_precision_1951_510_17j.jpg",
+      "img": "images/swiss-wrist-watches/gruen_precision_1951_510_17j.jpg",
+      "description": "Gruen Precision 1951 510 17J vintage watch.",
+      "case_image": "images/american_wrist_watch_cases/gruen_precision_1951_510_17j_case.jpg",
+      "movement_img": "images/swiss-movements-watches/gruen_precision_1951_510_17j.jpg"
+    },
+    {
+      "id": "gruen_precision_1961_712ca_automatic_25j",
+      "name": "Gruen Precision 1961 712Ca Automatic 25J",
+      "brand": "Gruen",
+      "type": "Swiss Wrist Watch",
+      "folder": "swiss-wrist-watches",
+      "image": "images/swiss-wrist-watches/gruen_precision_1961_712ca_automatic_25j.jpg",
+      "img": "images/swiss-wrist-watches/gruen_precision_1961_712ca_automatic_25j.jpg",
+      "description": "Gruen Precision 1961 712Ca Automatic 25J vintage watch.",
+      "case_image": "images/american_wrist_watch_cases/gruen_precision_1961_712ca_automatic_25j_case.jpg",
+      "movement_img": "images/swiss-movements-watches/gruen_precision_1961_712ca_automatic_25j.jpg"
+    },
+    {
+      "id": "longines_admiral_1973_6651_automatic_daydate_25j",
+      "name": "Longines Admiral Automatic Daydate 25J",
+      "brand": "Longines",
+      "type": "Swiss Wrist Watch",
+      "folder": "swiss-wrist-watches",
+      "image": "images/swiss-wrist-watches/longines_admiral_1973_6651_automatic_daydate_25j.jpg",
+      "img": "images/swiss-wrist-watches/longines_admiral_1973_6651_automatic_daydate_25j.jpg",
+      "description": "1973 6651 Longines Admiral Automatic day-date 25J vintage luxury dress watch.",
+      "case_image": "images/swiss-watch-cases/longine_admiral_1973_6651_automatic_daydate_25j_case.jpg",
+      "movement_img": "images/swiss-movements-watches/longines_admiral_1973_6651_automatic_daydate_25j.jpg"
+    },
+    
+    {
+      "id": "seiko_5_21j",
+      "name": "Seiko 5 21J",
+      "brand": "Seiko",
+      "type": "Swiss Wrist Watch",
+      "folder": "swiss-wrist-watches",
+      "image": "images/swiss-wrist-watches/seiko_5_21j.jpg",
+      "img": "images/swiss-wrist-watches/seiko_5_21j.jpg",
+      "description": "Seiko 1967 5 6119A 21J vintage watch.",
+      "case_image": "images/american_wrist_watch_cases/seiko_5_21j_cas.jpg",
+      "movement_img": "images/swiss-movements-watches/seiko_5_21j.jpg"
+    },
+
+    {
+      "id": "bulova_1949_10BC_J9_15j",
+      "name": "bulova 1949 10BC J9 15j",
+      "brand": "bulova",
+      "type": "American Wrist Watch",
+      "folder": "american-wrist-watches",
+      "image": "images/american-wrist-watches/bulova_1949_10BC_J9_15j.jpg",
+      "img": "images/american-wrist-watches/bulova_1949_10BC_J9_15j.jpg",
+      "description": "Bulova 1949 10BC J9 15j vintage dress watch.",
+      "movement_img": "images/american-movements-watches/bulova_1949_10BC_J9_15j.jpg"
+    },
+    {
+      "id": "walnut_seth_thomas_triple_chime_pendulum_homemade",
+      "name": "Walnut Seth Thomas Triple Chime Pendulum",
+      "brand": "Seth Thomas",
+      "type": "American Homemade Clock",
+      "folder": "american-homemade-clocks",
+      "image": "images/american-homemade-clocks/walnut_seth_thomas_triple_chime_pendulum_homemade.jpg",
+      "img": "images/american-homemade-clocks/walnut_seth_thomas_triple_chime_pendulum_homemade.jpg",
+      "description": "Walnut Seth Thomas homemade triple-chime pendulum clock.",
+      "movement_img": "images/american-movements-homemade-clocks/1051_031A_hermle_triple_chime_pendulum.jpg"
+    },
+    {
+      "id": "white_oak_triple_chime_tambour_homemade",
+      "name": "White Oak Triple Chime Tambour",
+      "brand": "Hermle",
+      "type": "American Homemade Clock",
+      "folder": "american-homemade-clocks",
+      "image": "images/american-homemade-clocks/white_oak_triple_chime_tambour_homemade.jpg",
+      "img": "images/american-homemade-clocks/white_oak_triple_chime_tambour_homemade.jpg",
+      "description": "White oak homemade triple-chime tambour clock.",
+      "movement_img": "images/american-movements-homemade-clocks/351_020_hermle_triple_chime.jpg"
+    },
+    {
+      "id": "regula25_cukoo_24_inch_one_day_musical_1940s_clock",
+      "name": "Regula 25 Cuckoo Clock",
+      "brand": "German",
+      "type": "German Cuckoo Clock",
+      "folder": "american-homemade-clocks",
+      "image": "images/american-homemade-clocks/regula25_cukoo_24_inch_one_day_musical_1940s_clock.jpg",
+      "img": "images/american-homemade-clocks/regula25_cukoo_24_inch_one_day_musical_1940s_clock.jpg",
+      "description": "German 24-inch-tall 1940s Regula 25 three-weight musical cuckoo clock.",
+      "movement_img": "images/american-movements-homemade-clocks/regula25_cukoo_24_inch_one_day_musical_1940s_clock.jpg"
+    },
+
+    {
+      "id": "german_late_1800s_7_foot_weight_driven_grandfather_clock",
+      "name": "German Late 1800s 7-Foot Weight-Driven Grandfather Clock",
+      "brand": "German",
+      "type": "German Grandfather Clock",
+      "folder": "american-homemade-clocks",
+      "image": "images/american-homemade-clocks/german_late_1800s_7_foot_weight_driven_grandfather_clock.jpg",
+      "img": "images/american-homemade-clocks/german_late_1800s_7_foot_weight_driven_grandfather_clock.jpg",
+      "description": "German late-1800s 7-foot weight-driven grandfather clock.",
+      "movement_img": "/images/american-movements-homemade-clocks/german_late_1800s_7_foot_weight_driven_grandfather_clock.jpg"
+    },
+
+    {
+      "id": "victorian_fraganard_1940s_1950s_weight_driven_wall_clock",
+      "name": "Victorian Fraganard 1940s-1950s Weight-Driven Wall Clock",
+      "brand": "German",
+      "type": "Victorian Fraganard Wall Clock",
+      "folder": "american-homemade-clocks",
+      "image": "images/american-homemade-clocks/victorian_fraganard_1940s_1950s_weight_driven_wall_clock.jpg",
+      "img": "images/american-homemade-clocks/victorian_fraganard_1940s_1950s_weight_driven_wall_clock.jpg",
+      "description": "Victorian Fraganard 1940s-1950s weight-driven wall clock.",
+      "movement_img": "images/american-movements-homemade-clocks/schmeckenbecher_H65_weight_driven_movement.jpg"
+    },
+
+      {
+      "id": "baron_17j_swiss_1949.jpg",
+      "name": "baron 17j",
+      "brand": "swiss",
+      "type": "Swiss Wrist Watch",
+      "folder": "swiss-wrist-watches",
+      "image": "images/swiss-wrist-watches/baron_17j_swiss_1949.jpg",
+      "img": "images/swiss-wrist-watches/baron_17j_swiss_1949.jpg",
+      "description": "Baron swiss 1949 17j vintage watch.",
+      "movement_img": "/images/swiss-movements-watches/baron_17j_swiss_1949.jpg"
+    }
+    
+  ]
+}

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  images/<favicon.ico>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>American Wrist Watches - VintageWatchSite</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .page-status {
+      margin: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .watch-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .watch-card {
+      width: 250px;
+      min-width: 250px;
+      box-sizing: border-box;
+      padding: 10px;
+      text-align: center;
+      background-color: #fff8e1;
+      border: 1px solid #c2a35e;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: visible;
+    }
+
+    .watch-img,
+    .image-error {
+      display: block;
+      width: 100%;
+      height: 250px;
+      box-sizing: border-box;
+    }
+
+    .watch-img {
+      object-fit: contain;
+      background-color: #f5ead0;
+      transition: transform 0.3s ease;
+      transform-origin: center center;
+    }
+
+    .watch-img.zoomed {
+      position: relative;
+      z-index: 10;
+      transform: scale(1.25);
+    }
+
+    .image-error {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      color: #6b2d2d;
+      background-color: #f5ead0;
+      text-align: center;
+      overflow-wrap: anywhere;
+      font-size: 0.9rem;
+    }
+
+    .card-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      padding-top: 10px;
+    }
+
+    .card-buttons button,
+    .card-buttons a {
+      border: 0;
+      padding: 8px 10px;
+      color: #fff;
+      background-color: #8b5a2b;
+      cursor: pointer;
+      font: inherit;
+      text-decoration: none;
+    }
+
+    .card-buttons button:hover,
+    .card-buttons a:hover {
+      background-color: #6f451f;
+    }
+  </style>
+</head>
+
+<body class="parchment">
+  <nav class="navbar" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="american-pocket.html">American Pocket Watches</a>
+    <a href="american-wrist.html">American Wrist Watches</a>
+    <a href="swiss-wrist.html">Swiss Wrist Watches</a>
+    <a href="swiss-pocket.html">Swiss Pocket Watches</a>
+    <a href="american-homemade-clocks.html">American Homemade Clocks</a>
+    <a href="brands.html">Brands</a>
+    <a href="collections.html">Collections</a>
+    <a href="search.html">Search</a>
+    <a href="list-your-watch.html">List Your Watch</a>
+    <a href="movement-upload.html">Movement Upload</a>
+    <a href="movement-viewer.html">Movement Viewer</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+    <div id="navbar-time" class="navbar-time" aria-live="polite"></div>
+  </nav>
+
+  <main class="content">
+    <h1>American Wrist Watches</h1>
+    <h2>Classic American Vintage Wristwatches</h2>
+
+    <p id="wrist-status" class="page-status">
+      Loading American wrist watches...
+    </p>
+
+    <div id="watch-grid" class="watch-grid"></div>
+  </main>
+
+  <script src="clock.js"></script>
+  <script src="main.js"></script>
+
+  <script>
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function getImagePath(watch) {
+      if (typeof watch.image === "string" && watch.image.trim() !== "") {
+        return watch.image.trim().replace(/\\/g, "/");
+      }
+
+      if (
+        typeof watch.folder === "string" &&
+        typeof watch.img === "string" &&
+        watch.folder.trim() !== "" &&
+        watch.img.trim() !== ""
+      ) {
+        return `images/${watch.folder}/${watch.img}`.replace(/\\/g, "/");
+      }
+
+      return "";
+    }
+
+    function createWristWatchCard(watch) {
+      const card = document.createElement("article");
+      const imagePath = getImagePath(watch);
+      const watchName = watch.name || "Unnamed American wrist watch";
+      const watchType = watch.type || "American Wrist Watch";
+
+      card.className = "watch-card";
+      card.dataset.watchId = watch.id || "";
+
+      card.innerHTML = `
+        <img
+          src="${escapeHtml(imagePath)}"
+          class="watch-img"
+          alt="${escapeHtml(watchName)}"
+        >
+
+        <h3>${escapeHtml(watchName)}</h3>
+        <p>${escapeHtml(watchType)}</p>
+
+        <div class="card-buttons">
+          <button type="button" class="details-button">
+            View Details
+          </button>
+
+          <button type="button" class="zoom-button">
+            Zoom
+          </button>
+
+          <button type="button" class="movement-button">
+            View Movement
+          </button>
+        </div>
+      `;
+
+      const image = card.querySelector(".watch-img");
+
+      image.addEventListener("error", () => {
+        const errorElement = document.createElement("div");
+        errorElement.className = "image-error";
+        errorElement.textContent = imagePath
+          ? `Image not found: ${imagePath}`
+          : "No image path supplied in watches.json.";
+        image.replaceWith(errorElement);
+      });
+
+      card
+        .querySelector(".details-button")
+        .addEventListener("click", () => {
+          window.location.href = `details.html?watchId=${encodeURIComponent(
+            String(watch.id || "")
+          )}`;
+        });
+
+      card
+        .querySelector(".zoom-button")
+        .addEventListener("click", () => {
+          const currentImage = card.querySelector(".watch-img");
+
+          if (currentImage) {
+            currentImage.classList.toggle("zoomed");
+          }
+        });
+
+      card
+        .querySelector(".movement-button")
+        .addEventListener("click", () => {
+          window.location.href = `movement-viewer.html?id=${encodeURIComponent(
+            String(watch.id || "")
+          )}`;
+        });
+
+      return card;
+    }
+
+    async function loadWristWatches() {
+      const status = document.getElementById("wrist-status");
+      const watchGrid = document.getElementById("watch-grid");
+
+      try {
+        const response = await fetch("watches.json", {
+          cache: "no-store"
+        });
+
+        if (!response.ok) {
+          throw new Error(
+            `Unable to load watches.json: ${response.status}`
+          );
+        }
+
+        const data = await response.json();
+
+        if (!data || !Array.isArray(data.watches)) {
+          throw new Error('watches.json must contain a "watches" array.');
+        }
+
+        const wristWatches = data.watches.filter((watch) => {
+          return String(watch.type || "").trim().toLowerCase() ===
+            "american wrist watch";
+        });
+
+        watchGrid.replaceChildren(
+          ...wristWatches.map(createWristWatchCard)
+        );
+
+        status.textContent = wristWatches.length
+          ? `${wristWatches.length} American wrist watches loaded.`
+          : "No American wrist watches were found in watches.json.";
+      } catch (error) {
+        console.error("Failed to load American wrist watches:", error);
+        status.textContent =
+          "Unable to load American wrist watches. Check watches.json.";
+        watchGrid.replaceChildren();
+      }
+    }
+
+    loadWristWatches();
+  </script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+/* Base layout */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  color: #2f1b0c;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Parchment background */
+.parchment {
+  min-height: 100vh;
+  background-color: #d8b878;
+  background-image: url("images/parchment.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Navigation */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background-color: rgba(74, 43, 20, 0.92);
+}
+
+.navbar a {
+  color: #fff8e1;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #f2cf7d;
+  text-decoration: underline;
+}
+
+.navbar-time {
+  margin-left: auto;
+  color: #fff8e1;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* Main content */
+.content {
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 48px;
+  transform-origin: top center;
+  will-change: transform;
+}
+
+.content h1,
+.content h2 {
+  text-align: center;
+}
+
+.content h1 {
+  margin-top: 0;
+}
+
+.page-status {
+  margin: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Watch grid */
+.watch-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Watch cards */
+.watch-card {
+  width: 250px;
+  min-width: 250px;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+  background-color: #fff8e1;
+  border: 1px solid #c2a35e;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: visible;
+}
+
+.watch-card h3 {
+  margin: 12px 0 8px;
+}
+
+.watch-card p {
+  margin: 6px 0;
+}
+
+/* Watch and movement images */
+.watch-img,
+.movement-img,
+.image-error {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.watch-img,
+.movement-img {
+  height: 250px;
+  object-fit: contain;
+  background-color: #f5ead0;
+}
+
+.watch-img,
+.movement-img {
+  transition: transform 0.3s ease;
+  transform-origin: center center;
+}
+
+.watch-img.zoomed,
+.movement-img.zoomed {
+  position: relative;
+  z-index: 10;
+  transform: scale(1.25);
+}
+
+/* Movement preview */
+.movement-preview {
+  margin-top: 10px;
+}
+
+.movement-preview summary {
+  color: #6f451f;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.movement-preview[open] {
+  padding-bottom: 6px;
+}
+
+/* Loupe */
+.loupe-target {
+  position: relative;
+  cursor: crosshair;
+}
+
+.loupe {
+  position: fixed;
+  z-index: 1000;
+  width: 180px;
+  height: 180px;
+  display: none;
+  pointer-events: none;
+  border: 4px solid #8b5a2b;
+  border-radius: 50%;
+  background-color: #f5ead0;
+  background-repeat: no-repeat;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 2px rgba(255, 248, 225, 0.8);
+  transform: translate(18px, 18px);
+}
+
+.loupe.visible {
+  display: block;
+}
+
+.loupe-label {
+  position: fixed;
+  z-index: 1001;
+  display: none;
+  pointer-events: none;
+  padding: 4px 8px;
+  color: #fff8e1;
+  background-color: rgba(74, 43, 20, 0.9);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  transform: translate(18px, 208px);
+}
+
+.loupe-label.visible {
+  display: block;
+}
+
+/* Missing-image display */
+.image-error {
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  color: #6b2d2d;
+  background-color: #f5ead0;
+  text-align: center;
+  overflow-wrap: anywhere;
+  font-size: 0.9rem;
+}
+
+/* Buttons and links */
+.card-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.card-buttons button,
+.card-buttons a {
+  border: 0;
+  padding: 8px 10px;
+  color: #fff;
+  background-color: #8b5a2b;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+}
+
+.card-buttons button:hover,
+.card-buttons a:hover {
+  background-color: #6f451f;
+}
+
+/* Forms and general controls */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #d49a27;
+  outline-offset: 2px;
+}
+
+/* Full-page magnifier controls */
+.page-magnifier-controls {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 4px 5px;
+  color: #fff8e1;
+  background: rgba(74, 43, 20, 0.95);
+  border: 1px solid #c2a35e;
+  border-radius: 4px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+  transform: translateX(-50%);
+}
+
+.page-magnifier-controls button {
+  min-width: 26px;
+  min-height: 24px;
+  padding: 2px 5px;
+  color: #fff;
+  background: #8b5a2b;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: bold;
+}
+
+.page-magnifier-controls button:hover {
+  background: #6f451f;
+}
+
+.page-magnifier-controls button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.page-zoom-level {
+  min-width: 40px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.page-zoom-help {
+  margin-left: 3px;
+  color: #fff8e1;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+  .navbar {
+    justify-content: center;
+  }
+
+  .navbar-time {
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .content {
+    width: min(100% - 20px, 500px);
+    padding-top: 20px;
+  }
+
+  .watch-card {
+    width: min(100%, 250px);
+    min-width: 0;
+  }
+
+  .loupe {
+    width: 140px;
+    height: 140px;
+  }
+
+  .loupe-label {
+    transform: translate(18px, 168px);
+  }
+
+  .page-magnifier-controls {
+    gap: 2px;
+    padding: 3px 4px;
+  }
+
+  .page-zoom-help {
+    font-size: 0.65rem;
+  }
+}

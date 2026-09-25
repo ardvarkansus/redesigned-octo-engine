@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VintageWatchSite – Front Image Upload</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<body>
+  <nav> ...full nav bar here... </nav>
+
+  <h1>Page Title</h1>
+  <div id="cards" class="cards"></div>
+
+<header>
+  <h1>VintageWatchSite</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="collections.html">Collections</a>
+    <a href="brands.html">Brands</a>
+    <a href="details.html">Details</a>
+    <a href="list-your-watch.html">List Your Watch</a>
+    <a href="movement-upload.html">Movement Upload</a>
+    <a href="movement-zoom.html">Movement Zoom</a>
+    <a href="american-pocket.html">American Pocket Watches</a>
+    <a href="swiss-pocket.html">Swiss Pocket Watches</a>
+    <a href="american-homemade-clocks.html">American Homemade Clocks</a>
+    <a href="wrist-watches.html">Wrist Watches</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Upload a Front Watch Image</h2>
+
+  <div class="upload-box">
+    <label>Watch Key (example: bulova_accutron_1968)</label>
+    <input id="watchKey" type="text" placeholder="Enter the watch key">
+
+    <label>Select Front Watch Image</label>
+    <input id="watchImage" type="file" accept="image/*">
+
+    <button class="submit-btn" onclick="uploadFrontImage()">Upload Front Image</button>
+
+    <div id="statusBox" class="status-box"></div>
+  </div>
+</main>
+
+<div id="zoom-overlay"></div>
+<script src="zoom.js"></script>
+
+<script>
+async function uploadFrontImage() {
+  const key = document.getElementById("watchKey").value.trim();
+  const file = document.getElementById("watchImage").files[0];
+  const statusBox = document.getElementById("statusBox");
+
+  if (!key || !file) {
+    statusBox.style.display = "block";
+    statusBox.innerHTML = "Please enter a watch key and select an image.";
+    return;
+  }
+
+  statusBox.style.display = "block";
+  statusBox.innerHTML = "Uploading...";
+
+  try {
+    const formData = new FormData();
+    formData.append("watchImage", file);
+    formData.append("watchKey", key);
+
+    const response = await fetch("https://vintagewatch-upload.<your-subdomain>.workers.dev/uploadWatchImage", {
+      method: "POST",
+      body: formData
+    });
+
+    const result = await response.text();
+    statusBox.innerHTML = result;
+  } catch (err) {
+    statusBox.innerHTML = "Upload failed: " + err;
+  }
+}
+</script>
+
+</body>
+</html>
+
+

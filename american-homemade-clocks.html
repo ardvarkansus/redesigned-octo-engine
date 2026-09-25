@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>American Homemade Clocks - VintageWatchSite</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .clock-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .clock-card {
+      width: 280px;
+      padding: 12px;
+      text-align: center;
+      background: #fff8e1;
+      border: 1px solid #c2a35e;
+      border-radius: 6px;
+    }
+
+    .clock-img {
+      display: block;
+      width: 100%;
+      height: 280px;
+      object-fit: contain;
+      background: #f5ead0;
+      cursor: crosshair;
+    }
+
+    .clock-card h3 {
+      margin: 12px 0 6px;
+    }
+
+    .clock-card p {
+      margin: 6px 0;
+    }
+
+    .clock-card .card-buttons {
+      margin-top: 10px;
+    }
+
+    .clock-card .zoomed {
+      position: relative;
+      z-index: 10;
+      transform: scale(1.25);
+    }
+  </style>
+</head>
+
+<body class="parchment">
+  <nav class="navbar" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="american-pocket.html">American Pocket Watches</a>
+    <a href="american-wrist.html">American Wrist Watches</a>
+    <a href="swiss-wrist.html">Swiss Wrist Watches</a>
+    <a href="swiss-pocket.html">Swiss Pocket Watches</a>
+    <a href="american-homemade-clocks.html">American Homemade Clocks</a>
+    <a href="brands.html">Brands</a>
+    <a href="collections.html">Collections</a>
+    <a href="search.html">Search</a>
+    <a href="list-your-watch.html">List Your Watch</a>
+    <a href="movement-upload.html">Movement Upload</a>
+    <a href="movement-zoom.html">Movement Zoom</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+    <span id="navbar-time" class="navbar-time"></span>
+  </nav>
+
+  <main class="content">
+    <h1>American Homemade Clocks</h1>
+    <h2>Handmade American Pendulum and Tambour Clocks</h2>
+
+    <section class="clock-grid" aria-label="American homemade clocks">
+      <article
+        class="clock-card"
+        data-movement="images/american-movements-homemade-clocks/1051_031A_hermle_triple_chime_pendulum.jpg"
+      >
+        <img
+          class="clock-img loupe-target"
+          src="images/american-homemade-clocks/walnut_seth_thomas_triple_chime_pendulum_homemade.jpg"
+          alt="Walnut Seth Thomas homemade triple-chime pendulum clock"
+        >
+        <h3>Walnut Seth Thomas Triple Chime Pendulum</h3>
+        <p>American Homemade Clock</p>
+        <div class="card-buttons">
+          <button type="button" class="details-button">
+            View Details
+          </button>
+          <button type="button" class="zoom-button">
+            Zoom
+          </button>
+          <button type="button" class="movement-button">
+            Movement
+          </button>
+        </div>
+      </article>
+
+      <article
+        class="clock-card"
+        data-movement="images/american-movements-homemade-clocks/351_020_hermle_triple_chime.jpg"
+      >
+        <img
+          class="clock-img loupe-target"
+          src="images/american-homemade-clocks/white_oak_triple_chime_tambour_homemade.jpg"
+          alt="White oak homemade triple-chime tambour clock"
+        >
+        <h3>White Oak Triple Chime Tambour</h3>
+        <p>American Homemade Clock</p>
+        <div class="card-buttons">
+          <button type="button" class="details-button">
+            View Details
+          </button>
+          <button type="button" class="zoom-button">
+            Zoom
+          </button>
+          <button type="button" class="movement-button">
+            Movement
+          </button>
+        </div>
+      </article>
+
+      <article
+        class="clock-card"
+        data-movement="images/american-movements-homemade-clocks/regula25_cukoo_24_inch_one_day_musical_1940s_clock.jpg"
+      >
+        <img
+          class="clock-img loupe-target"
+          src="images/american-homemade-clocks/regula25_cukoo_24_inch_one_day_musical_1940s_clock.jpg"
+          alt="Regula 25 German cuckoo clock"
+        >
+        <h3>Regula 25 Cuckoo Clock</h3>
+        <p>German Cuckoo Clock</p>
+        <div class="card-buttons">
+          <button type="button" class="details-button">
+            View Details
+          </button>
+          <button type="button" class="zoom-button">
+            Zoom
+          </button>
+          <button type="button" class="movement-button">
+            Movement
+          </button>
+        </div>
+      </article>
+
+      <article class="clock-card">
+        <img
+          class="clock-img loupe-target"
+          src="images/american-homemade-clocks/german_late_1800s_7_foot_weight_driven_grandfather_clock.jpg"
+          alt="German late 1800s 7-foot weight-driven grandfather clock"
+        >
+        <h3>German Late 1800s 7-Foot Weight-Driven Grandfather Clock</h3>
+        <p>German Grandfather Clock</p>
+        <div class="card-buttons">
+          <button type="button" class="details-button">
+            View Details
+          </button>
+          <button type="button" class="zoom-button">
+            Zoom
+          </button>
+          <button type="button" class="movement-button">
+            Movement
+          </button>
+        </div>
+      </article>
+
+      <article
+        class="clock-card"
+        data-movement="images/american-movements-homemade-clocks/schmeckenbecher_H65_weight_driven_movement.jpg"
+      >
+        <img
+          class="clock-img loupe-target"
+          src="images/american-homemade-clocks/victorian_fraganard_1940s_1950s_weight_driven_wall_clock.jpg"
+          alt="Victorian Fraganard 1940s-1950s weight-driven wall clock"
+        >
+        <h3>Victorian Fraganard 1940s-1950s Weight-Driven Wall Clock</h3>
+        <p>Victorian Fraganard Wall Clock</p>
+        <div class="card-buttons">
+          <button type="button" class="details-button">
+            View Details
+          </button>
+          <button type="button" class="zoom-button">
+            Zoom
+          </button>
+          <button type="button" class="movement-button">
+            Movement
+          </button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="clock.js"></script>
+  <script src="main.js"></script>
+  <script>
+    document.querySelectorAll(".clock-card").forEach((card) => {
+      const image = card.querySelector(".clock-img");
+      const name = card.querySelector("h3").textContent;
+
+      card.querySelector(".details-button").addEventListener("click", () => {
+        const message = `${name} - American Homemade Clock.`;
+        if (typeof showDescription === "function") {
+          showDescription(message);
+        } else {
+          window.alert(message);
+        }
+      });
+
+      card.querySelector(".zoom-button").addEventListener("click", () => {
+        image.classList.toggle("zoomed");
+      });
+
+      card.querySelector(".movement-button").addEventListener("click", () => {
+        const movementPath = card.dataset.movement;
+        const imagePath = movementPath || image.getAttribute("src");
+        const movementUrl = `movement-viewer.html?image=${encodeURIComponent(imagePath)}&name=${encodeURIComponent(name)}`;
+        window.location.href = movementUrl;
+      });
+    });
+  </script>
+</body>
+</html>

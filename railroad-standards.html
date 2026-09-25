@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Railroad Standards</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="zoom.js"></script>
+</head>
+
+<body>
+<body>
+  <nav> ...full nav bar here... </nav>
+
+  <h1>Page Title</h1>
+  <div id="cards" class="cards"></div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <nav class="navbar-left">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="list-your-watch.html">List Your Watch</a>
+      <a href="collections.html">Collections</a>
+      <a href="brands.html">Brands</a>
+      <a href="movement-upload.html">Movement Upload</a>
+      <a href="movement-zoom.html">Movement Zoom</a>
+      <a href="american-pocket.html">American Pocket</a>
+      <a href="swiss-pocket.html">Swiss Pocket Watches</a>
+      <a href="american-homemade-clocks.html">American Homemade Clocks</a>
+      <a href="american-wrist.html">American Wrist</a>
+      <a href="swiss-watches.html">Swiss Watches</a>
+      <a href="railroad-standards.html">Railroad Standards</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="navbar-time" id="navbar-time"></div>
+  </header>
+
+  <!-- Main Panel -->
+  <main class="panel">
+
+    <h2 style="text-align:center;">Railroad Watch Standards</h2>
+
+    <div class="content-box">
+      <h3>The Requirements of a True Railroad Watch</h3>
+      <p>
+        During the golden era of American railroading, accurate timekeeping was essential for safety.
+        Railroad companies enforced strict standards for watches used by conductors, engineers, and brakemen.
+      </p>
+
+      <ul>
+        <li>Open-face case</li>
+        <li>Size 16 or 18</li>
+        <li>Minimum 17 jewels</li>
+        <li>Adjusted to at least 5 positions</li>
+        <li>Adjusted to temperature</li>
+        <li>Adjusted to isochronism</li>
+        <li>Lever-set</li>
+        <li>Bold Arabic numerals</li>
+        <li>Plain white dial</li>
+        <li>Steel escape wheel (later years)</li>
+        <li>Daily inspection by a time inspector</li>
+      </ul>
+
+      <h3>Famous Railroad-Approved Watches</h3>
+      <ul>
+        <li>Hamilton 992B</li>
+        <li>Illinois Bunn Special</li>
+        <li>Waltham Vanguard</li>
+        <li>Elgin B.W. Raymond</li>
+        <li>South Bend Railroad Grades</li>
+        <li>Rockford Railroad Grades</li>
+      </ul>
+    </div>
+
+    <h2 style="text-align:center; margin-top:40px;">All Railroad Watches</h2>
+    <p style="text-align:center;">Automatically filtered from KV using railroad keywords.</p>
+
+    <div id="railroadGrid" class="watch-grid"></div>
+
+  </main>
+
+  <div id="zoom-overlay"></div>
+
+  <!-- KV Loader -->
+  <script>
+    const WORKER_URL = "https://vintagewatchsite-worker.y2camlee.workers.dev/watches";
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      const container = document.getElementById("railroadGrid");
+
+      try {
+        const res = await fetch(WORKER_URL);
+        const data = await res.json();
+
+        // Railroad keywords
+        const railroadKeywords = [
+          "railroad",
+          "railway",
+          "railroad-grade",
+          "railway special",
+          "bunn special",
+          "adjusted to 6 positions",
+          "adjusted to 5 positions"
+        ];
+
+        Object.keys(data).forEach(key => {
+          const w = data[key];
+          const desc = (w.desc || "").toLowerCase();
+
+          const isRailroad = railroadKeywords.some(k =>
+            desc.includes(k.toLowerCase())
+          );
+
+          if (isRailroad) {
+            container.innerHTML += `
+              <div class="watch-card">
+                <img src="images/${w.img}" onclick="zoomImage('${w.img}')">
+                <h3>${w.name}</h3>
+                <p><strong>${w.brand}</strong></p>
+                <button onclick="location.href='details.html?watch=${key}'">View Details</button>
+              </div>
+            `;
+          }
+        });
+
+      } catch (err) {
+        console.error("Error loading railroad watches:", err);
+      }
+    });
+  </script>
+
+  <!-- Clock -->
+  <script>
+    function updateTime() {
+      const el = document.getElementById("navbar-time");
+      const now = new Date();
+      let h = now.getHours();
+      const m = String(now.getMinutes()).padStart(2, "0");
+      const ampm = h >= 12 ? "PM" : "AM";
+      h = h % 12 || 12;
+      el.textContent = `${String(h).padStart(2, "0")}:${m} ${ampm}`;
+    }
+    updateTime();
+    setInterval(updateTime, 60000);
+  </script>
+
+</body>
+</html>
+
+

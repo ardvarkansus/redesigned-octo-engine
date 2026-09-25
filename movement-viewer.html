@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movement Viewer - VintageWatchSite</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .movement-viewer {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .paired-view {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .case-column,
+    .movement-column {
+      flex: 1;
+      min-width: 300px;
+      max-width: 450px;
+    }
+
+    .case-column h2,
+    .movement-column h2 {
+      color: #6f451f;
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .case-img,
+    .movement-img {
+      display: block;
+      width: 100%;
+      height: 400px;
+      margin: 15px auto;
+      object-fit: contain;
+      background-color: #f5ead0;
+      border: 1px solid #c2a67b;
+      border-radius: 4px;
+    }
+
+    .movement-details {
+      margin: 20px auto;
+      text-align: left;
+      max-width: 450px;
+    }
+
+    .movement-details p {
+      margin: 8px 0;
+      line-height: 1.6;
+    }
+
+    .watch-selector {
+      max-width: 500px;
+      margin: 15px auto;
+      text-align: left;
+    }
+
+    .watch-selector label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    .watch-selector select {
+      width: 100%;
+      padding: 9px;
+      font: inherit;
+    }
+
+    .movement-viewer button {
+      cursor: pointer;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #8b5a2b;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .movement-viewer button:hover {
+      background-color: #6f451f;
+    }
+
+    .image-error {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      color: #6b2d2d;
+      background-color: #f5ead0;
+      border: 1px solid #c2a67b;
+      border-radius: 4px;
+      text-align: center;
+      font-size: 0.9rem;
+      min-height: 300px;
+    }
+  </style>
+</head>
+
+<body class="parchment">
+  <nav class="navbar" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="american-pocket.html">American Pocket Watches</a>
+    <a href="american-wrist.html">American Wrist Watches</a>
+    <a href="swiss-wrist.html">Swiss Wrist Watches</a>
+    <a href="swiss-pocket.html">Swiss Pocket Watches</a>
+    <a href="american-homemade-clocks.html">American Homemade Clocks</a>
+    <a href="brands.html">Brands</a>
+    <a href="collections.html">Collections</a>
+    <a href="search.html">Search</a>
+    <a href="list-your-watch.html">List Your Watch</a>
+    <a href="movement-upload.html">Movement Upload</a>
+    <a href="movement-viewer.html">Movement Viewer</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+    <div id="navbar-time" class="navbar-time" aria-live="polite"></div>
+  </nav>
+
+  <main class="content">
+    <section class="movement-viewer" id="movement-viewer">
+      <h1 id="watch-name">Movement Viewer</h1>
+
+      <div class="watch-selector">
+        <label for="watch-select">Select a watch</label>
+        <select id="watch-select">
+          <option value="">Loading watches...</option>
+        </select>
+      </div>
+
+      <div class="paired-view">
+        <div class="case-column">
+          <h2>Watch Case</h2>
+          <img
+            id="case-image"
+            class="case-img"
+            alt="Watch case"
+          >
+        </div>
+
+        <div class="movement-column">
+          <h2>Movement</h2>
+          <img
+            id="movement-image"
+            class="movement-img"
+            alt="Watch movement"
+          >
+        </div>
+      </div>
+
+      <div id="watch-details" class="movement-details"></div>
+
+      <button type="button" onclick="history.back()">Back</button>
+    </section>
+  </main>
+
+  <script src="clock.js"></script>
+  <script src="main.js"></script>
+
+  <script>
+    async function loadMovement() {
+      const params = new URLSearchParams(window.location.search);
+      const watchId = params.get("id");
+      const imagePath = params.get("image");
+      const imageName = params.get("name");
+      const container = document.getElementById("movement-viewer");
+      const watchSelect = document.getElementById("watch-select");
+
+      try {
+        if (imagePath) {
+          watchSelect.hidden = true;
+          const movementImage = document.getElementById("movement-image");
+          const watchName = document.getElementById("watch-name");
+
+          watchName.textContent = `${imageName || "Clock"} - Movement`;
+          movementImage.src = imagePath;
+          movementImage.alt = `${imageName || "Clock"} movement`;
+          return;
+        }
+
+        const response = await fetch("watches.json", {
+          cache: "no-store"
+        });
+
+        if (!response.ok) {
+          throw new Error(`Unable to load watches.json: ${response.status}`);
+        }
+
+        const data = await response.json();
+        const watches = data.watches.filter((watch) => watch.id && watch.name);
+
+        watchSelect.replaceChildren(
+          new Option("Choose a watch...", ""),
+          ...watches.map((watch) => new Option(watch.name, watch.id))
+        );
+
+        if (!watchId) {
+          container.querySelector(".paired-view").hidden = true;
+          document.getElementById("watch-details").textContent =
+            "Choose a watch above to view its case and movement.";
+          return;
+        }
+
+        watchSelect.value = watchId;
+        const watch = data.watches.find((item) => item.id === watchId);
+
+        if (!watch) {
+          container.querySelector(".paired-view").hidden = true;
+          document.getElementById("watch-details").textContent =
+            "The selected watch was not found.";
+          return;
+        }
+
+        const caseImage = document.getElementById("case-image");
+        const movementImage = document.getElementById("movement-image");
+        const watchName = document.getElementById("watch-name");
+        const watchDetails = document.getElementById("watch-details");
+
+        watchName.textContent = watch.name;
+
+        const casePath = watch.case_image
+          ? watch.case_image.trim().replace(/\\/g, "/")
+          : await findCasePath(watch);
+        if (casePath) {
+          caseImage.src = casePath;
+          caseImage.alt = `${watch.name} case`;
+        } else {
+          showImageError(caseImage, "Case image not available");
+        }
+
+        movementImage.src = watch.movement_img || watch.img;
+        movementImage.alt = `${watch.name} movement`;
+
+        watchDetails.innerHTML = `
+          <p><strong>Brand:</strong> ${watch.brand || "Not listed"}</p>
+          <p><strong>Type:</strong> ${watch.type || "Not listed"}</p>
+          <p><strong>Jewels:</strong> ${watch.jewels || "Not listed"}</p>
+          <p><strong>Description:</strong> ${watch.description || "No description available"}</p>
+        `;
+      } catch (error) {
+        console.error("Failed to load movement data:", error);
+        container.innerHTML = "<p>Error loading movement data.</p>";
+      }
+    }
+
+    document.getElementById("watch-select").addEventListener("change", (event) => {
+      const watchId = event.target.value;
+      if (watchId) {
+        window.location.href =
+          `movement-viewer.html?id=${encodeURIComponent(watchId)}`;
+      }
+    });
+
+    async function findCasePath(watch) {
+      const imagePath = typeof watch.image === "string"
+        ? watch.image.trim().replace(/\\/g, "/")
+        : "";
+      const imageFileName = imagePath.split("/").pop() || "";
+      const imageBaseName = imageFileName.replace(/\.[^.]+$/, "");
+      const watchId = String(watch.id || "").replace(/\.jpg$/i, "");
+      const isSwiss = String(watch.type || "").toLowerCase().includes("swiss");
+      const caseFolder = isSwiss ? "swiss-watch-cases" : "american-watch-cases";
+      const names = [
+        `${imageBaseName}_case.jpg`,
+        `${imageBaseName}_back_case.jpg`,
+        `${watchId}_case.jpg`,
+        `${watchId}_back_case.jpg`
+      ];
+
+      for (const name of [...new Set(names)]) {
+        const path = `images/${caseFolder}/${name}`;
+        try {
+          const response = await fetch(path, { method: "HEAD", cache: "no-store" });
+          if (response.ok) return path;
+        } catch (error) {
+          console.warn(`Unable to check case image ${path}:`, error);
+        }
+      }
+
+      return "";
+    }
+
+    function showImageError(image, message) {
+      const errorElement = document.createElement("div");
+      errorElement.className = "image-error";
+      errorElement.textContent = message;
+      image.replaceWith(errorElement);
+    }
+
+    loadMovement();
+  </script>
+</body>
+</html>
