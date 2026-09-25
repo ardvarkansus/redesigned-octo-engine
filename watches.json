@@ -265,7 +265,6 @@
       "case_image": "images/american_wrist_watch_cases/benrus_1953_BA2_17j_case.jpg",
       "movement_img": "images/american-movements-watches/benrus_1953_BA2_17j.jpg"
     },
-    
     {
       "id": "bulova_accuquartz",
       "name": "Bulova Accuquartz",
@@ -321,9 +320,8 @@
       "img": "images/american-wrist-watches/hamilton_thor_1960_770_22j.jpg",
       "description": "Hamilton Thor 1960 770 22J vintage watch.",
       "case_image": "images/american_wrist_watch_cases/hamilton_thor_1960_770_22j_case.jpg",
-       "movement_img": "images/american-movements-watches/hamilton_thor_1960_770_22j.jpg"
+      "movement_img": "images/american-movements-watches/hamilton_thor_1960_770_22j.jpg"
     },
-
     {
       "id": "columbia_1905_680706_7j",
       "name": "Columbia 680706 7J",
@@ -379,7 +377,6 @@
       "description": "Swiss 130955 vintage pocket watch.",
       "movement_img": "images/swiss-movements-watches/swiss_130955_7j.jpg"
     },
-
     {
       "id": "gruen_precision_1951_510_17j",
       "name": "Gruen Precision 1951 510 17J",
@@ -416,7 +413,6 @@
       "case_image": "images/swiss-watch-cases/longine_admiral_1973_6651_automatic_daydate_25j_case.jpg",
       "movement_img": "images/swiss-movements-watches/longines_admiral_1973_6651_automatic_daydate_25j.jpg"
     },
-    
     {
       "id": "seiko_5_21j",
       "name": "Seiko 5 21J",
@@ -429,7 +425,6 @@
       "case_image": "images/american_wrist_watch_cases/seiko_5_21j_cas.jpg",
       "movement_img": "images/swiss-movements-watches/seiko_5_21j.jpg"
     },
-
     {
       "id": "bulova_1949_10BC_J9_15j",
       "name": "bulova 1949 10BC J9 15j",
@@ -474,7 +469,6 @@
       "description": "German 24-inch-tall 1940s Regula 25 three-weight musical cuckoo clock.",
       "movement_img": "images/american-movements-homemade-clocks/regula25_cukoo_24_inch_one_day_musical_1940s_clock.jpg"
     },
-
     {
       "id": "german_late_1800s_7_foot_weight_driven_grandfather_clock",
       "name": "German Late 1800s 7-Foot Weight-Driven Grandfather Clock",
@@ -484,9 +478,8 @@
       "image": "images/american-homemade-clocks/german_late_1800s_7_foot_weight_driven_grandfather_clock.jpg",
       "img": "images/american-homemade-clocks/german_late_1800s_7_foot_weight_driven_grandfather_clock.jpg",
       "description": "German late-1800s 7-foot weight-driven grandfather clock.",
-      "movement_img": "/images/american-movements-homemade-clocks/german_late_1800s_7_foot_weight_driven_grandfather_clock.jpg"
+      "movement_img": "/images/american-movements-homemade-clocks/german_late_1800s_7_foot_weight_driven_grandfather_clock_movement.jpg"
     },
-
     {
       "id": "victorian_fraganard_1940s_1950s_weight_driven_wall_clock",
       "name": "Victorian Fraganard 1940s-1950s Weight-Driven Wall Clock",
@@ -498,18 +491,19 @@
       "description": "Victorian Fraganard 1940s-1950s weight-driven wall clock.",
       "movement_img": "images/american-movements-homemade-clocks/schmeckenbecher_H65_weight_driven_movement.jpg"
     },
-
-      {
-      "id": "baron_17j_swiss_1949.jpg",
+    {
+      "id": "baron_17j_swiss_1949",
       "name": "baron 17j",
       "brand": "swiss",
       "type": "Swiss Wrist Watch",
       "folder": "swiss-wrist-watches",
-      "image": "images/swiss-wrist-watches/baron_17j_swiss_1949.jpg",
-      "img": "images/swiss-wrist-watches/baron_17j_swiss_1949.jpg",
+      "image": "images/swiss-wrist-watches/Baron_17j_swiss_1949.jpg",
+      "img": "images/swiss-wrist-watches/Baron_17j_swiss_1949.jpg",
       "description": "Baron swiss 1949 17j vintage watch.",
-      "movement_img": "/images/swiss-movements-watches/baron_17j_swiss_1949.jpg"
+      "case_image": "images/swiss-watch-cases/Baron_17j_swiss_case.jpg",
+      "movement_img": "/images/swiss-movements-watches/Baron_17j_swiss_movement_1949.jpg"
     }
-    
   ]
 }
+
+

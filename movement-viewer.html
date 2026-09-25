@@ -143,20 +143,12 @@
       <div class="paired-view">
         <div class="case-column">
           <h2>Watch Case</h2>
-          <img
-            id="case-image"
-            class="case-img"
-            alt="Watch case"
-          >
+          <img id="case-image" class="case-img" alt="Watch case">
         </div>
 
         <div class="movement-column">
           <h2>Movement</h2>
-          <img
-            id="movement-image"
-            class="movement-img"
-            alt="Watch movement"
-          >
+          <img id="movement-image" class="movement-img" alt="Watch movement">
         </div>
       </div>
 
@@ -170,6 +162,24 @@
   <script src="main.js"></script>
 
   <script>
+    function normalizeImagePath(value) {
+      if (!value) return "";
+      return String(value)
+        .trim()
+        .replace(/\\/g, "/")
+        .replace(/^\/+/, "")
+        .replace(/\s+/g, "%20");
+    }
+
+    function encodePathIfNeeded(path) {
+      if (!path) return path;
+      try {
+        return encodeURI(path);
+      } catch (error) {
+        return path;
+      }
+    }
+
     async function loadMovement() {
       const params = new URLSearchParams(window.location.search);
       const watchId = params.get("id");
@@ -185,7 +195,7 @@
           const watchName = document.getElementById("watch-name");
 
           watchName.textContent = `${imageName || "Clock"} - Movement`;
-          movementImage.src = imagePath;
+          movementImage.src = encodePathIfNeeded(normalizeImagePath(imagePath));
           movementImage.alt = `${imageName || "Clock"} movement`;
           return;
         }
@@ -231,7 +241,7 @@
         watchName.textContent = watch.name;
 
         const casePath = watch.case_image
-          ? watch.case_image.trim().replace(/\\/g, "/")
+          ? encodePathIfNeeded(normalizeImagePath(watch.case_image))
           : await findCasePath(watch);
         if (casePath) {
           caseImage.src = casePath;
@@ -240,7 +250,8 @@
           showImageError(caseImage, "Case image not available");
         }
 
-        movementImage.src = watch.movement_img || watch.img;
+        const movementPath = watch.movement_img || watch.img;
+        movementImage.src = encodePathIfNeeded(normalizeImagePath(movementPath));
         movementImage.alt = `${watch.name} movement`;
 
         watchDetails.innerHTML = `
@@ -258,20 +269,26 @@
     document.getElementById("watch-select").addEventListener("change", (event) => {
       const watchId = event.target.value;
       if (watchId) {
-        window.location.href =
-          `movement-viewer.html?id=${encodeURIComponent(watchId)}`;
+        window.location.href = `movement-viewer.html?id=${encodeURIComponent(watchId)}`;
       }
     });
 
     async function findCasePath(watch) {
-      const imagePath = typeof watch.image === "string"
-        ? watch.image.trim().replace(/\\/g, "/")
-        : "";
-      const imageFileName = imagePath.split("/").pop() || "";
+      const fromImage = typeof watch.image === "string" ? normalizeImagePath(watch.image) : "";
+      const imageFileName = fromImage.split("/").pop() || "";
       const imageBaseName = imageFileName.replace(/\.[^.]+$/, "");
       const watchId = String(watch.id || "").replace(/\.jpg$/i, "");
       const isSwiss = String(watch.type || "").toLowerCase().includes("swiss");
-      const caseFolder = isSwiss ? "swiss-watch-cases" : "american-watch-cases";
+      const caseFolders = isSwiss
+        ? [
+            "images/swiss-watch-cases",
+            "images/american-watch-cases"
+          ]
+        : [
+            "images/american-watch-cases",
+            "images/american_wrist_watch_cases",
+            "images/american_wrist_watch_cases"
+          ];
       const names = [
         `${imageBaseName}_case.jpg`,
         `${imageBaseName}_back_case.jpg`,
@@ -279,13 +296,16 @@
         `${watchId}_back_case.jpg`
       ];
 
-      for (const name of [...new Set(names)]) {
-        const path = `images/${caseFolder}/${name}`;
-        try {
-          const response = await fetch(path, { method: "HEAD", cache: "no-store" });
-          if (response.ok) return path;
-        } catch (error) {
-          console.warn(`Unable to check case image ${path}:`, error);
+      const uniqueNames = [...new Set(names.filter(Boolean))];
+      for (const folder of caseFolders) {
+        for (const name of uniqueNames) {
+          const path = encodePathIfNeeded(`${folder}/${name}`);
+          try {
+            const response = await fetch(path, { method: "HEAD", cache: "no-store" });
+            if (response.ok) return path;
+          } catch (error) {
+            console.warn(`Unable to check case image ${path}:`, error);
+          }
         }
       }
 
@@ -303,3 +323,4 @@
   </script>
 </body>
 </html>
+
